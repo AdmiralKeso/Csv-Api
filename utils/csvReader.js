@@ -6,7 +6,9 @@ function readCSV(filePath) {
       const absolutePath = path.resolve(filePath);
 // If file isnt found or missing throw an error.
   if (!fs.existsSync(absolutePath)) {
-    throw new Error('500 Internal Server Error');
+    const error = new Error("500 Internal Server Error");
+    error.status = 500;
+    throw error;
   }
 }
 
