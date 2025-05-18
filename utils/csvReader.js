@@ -4,13 +4,13 @@ const path = require('path');
 
 function readCSV(filePath) {
       const absolutePath = path.resolve(filePath);
+      
 // If file isnt found or missing throw an error.
   if (!fs.existsSync(absolutePath)) {
     const error = new Error("500 Internal Server Error");
     error.status = 500;
     throw error;
   }
-}
 
 // Reads the whole file as a string.
 const content = fs.readFileSync(absolutePath, 'utf8'); // Reads it as a string (UTF-8 Encoding)
@@ -34,3 +34,6 @@ for (let i = 1; i < lines.length; i++) {
 }
 
 return data;
+}
+
+module.exports = { readCSV };
