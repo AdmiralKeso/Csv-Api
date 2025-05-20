@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function readCSV(filePath) {
-      const absolutePath = path.resolve(filePath);
+  const absolutePath = path.resolve(__dirname, filePath);
       
 // If file isnt found or missing throw an error.
   if (!fs.existsSync(absolutePath)) {
