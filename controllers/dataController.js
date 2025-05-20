@@ -1,4 +1,6 @@
-const { getData } = require('../services/getData');
+const { getData } = require('../services/dataService');
+const Person = require('../models/person');
+const { readCSV } = require('../utils/csvReader');
 
 function getDataController(req, res) {
     const limitParam = req.query.limit;
